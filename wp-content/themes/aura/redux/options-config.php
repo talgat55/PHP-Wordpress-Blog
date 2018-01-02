@@ -216,7 +216,7 @@
   
 
      Redux::setSection( $opt_name, array(
-        'title'            => __( 'Главная страница',  'redux-framework-demo' ),
+        'title'            => __( 'Блог',  'redux-framework-demo' ),
         'id'               => 'general-settings',
         'customizer_width' => '450px',
       //  'desc'             => ' ',
