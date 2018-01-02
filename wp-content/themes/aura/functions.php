@@ -28,17 +28,15 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/redux/options
  *
  * See: https://codex.wordpress.org/Post_Formats
  */
-add_theme_support( 'post-formats', array(
-	'aside',
+/*add_theme_support( 'post-formats', array( 
 	'image',
 	'video',
 	'quote',
 	'link',
 	'gallery',
 	'audio',
-) );
-
-
+) );*/
+add_theme_support( 'post-thumbnails' );
 add_image_size( 'light-featured-image', 2000, 1200, true );
 
 add_image_size( 'light-thumbnail-avatar', 100, 100, true );
@@ -53,8 +51,8 @@ function light_widgets_init() {
 		'name'          => __( 'Blog Sidebar', 'light' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'light' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -91,6 +89,7 @@ function light_scripts() {
 	wp_enqueue_style( 'light-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'normalize', get_theme_file_uri(  '/assets/css/normalize.css'),array(), '' );
 	wp_enqueue_style( 'light-style-main', get_theme_file_uri(  '/assets/css/index.css'),array(), '' );
+	wp_enqueue_style( 'font-awesome', get_theme_file_uri(  '/assets/css/font-awesome.min.css'),array(), '' );
 
  
 	wp_enqueue_style( 'Dosis', 'https://fonts.googleapis.com/css?family=Dosis:300,600,700,800' ); 

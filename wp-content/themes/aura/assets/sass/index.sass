@@ -41,6 +41,57 @@ body
 	background-color: #fff
 	overflow-x: hidden
 
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 
+	position: relative
+	min-height: 1px 
+	float: left
+
+.col-lg-12 
+	width: 100%
+  
+.col-lg-11 
+	width: 91.66666667%
+  
+.col-lg-10 
+	width: 83.33333333%
+  
+.col-lg-9 
+	width: 75%
+  
+.col-lg-8 
+	width: 66.66666667%
+  
+.col-lg-7 
+	width: 58.33333333%
+  
+.col-lg-6 
+	width: 50%
+  
+.col-lg-5 
+	width: 41.66666667%
+  
+.col-lg-4 
+	width: 33.33333333%
+  
+.col-lg-3 
+	width: 25%
+  
+
+#content,
+#wrapper
+	width: 100%
+
+
+ 
 //
 // Logo
 //
@@ -175,3 +226,167 @@ body
 			text-transform: uppercase
 			padding: 0 10px
 			font-weight: 600
+
+	li:hover
+			background-color: #f95b39
+ 
+.title-box
+	background: url(../images/old_moon.png)
+	padding: 30px 0
+	margin-bottom: 50px
+ 
+.title-box h1
+	margin: 0
+
+//
+// Posts
+//
+article
+	
+	background: #fff
+	margin-bottom: 20px
+
+	.large-post-item
+		background-color: #fff
+		margin-bottom: 40px
+
+.post
+
+	&-thumb img 
+		width: 100%
+		background-size: cover
+
+	&-entry
+		padding: 16px
+
+	&-header 
+
+		h2
+			margin-top: 0
+			font-size: 37px
+			letter-spacing: 1px
+			line-height: 40px
+			text-transform: uppercase
+
+		a
+			text-decoration: none
+			color: #333
+			transition: all 0.3s ease-in-out
+
+			&:hover
+				color: #f95b39
+
+//
+// Comment Author
+//
+.post-single-comment
+	margin: 40px 0
+	padding: 16px
+	background-color: #fff
+
+.comment
+
+	&-wrap-author
+		img
+			width: 90px
+
+	&-wrap-author 
+		float: left
+		margin-right: 16px
+
+	&-reply
+		float: right
+		padding: 1px 5px
+		background-color: #f95b39
+		color: #fff
+		cursor: pointer
+		transition: all 0.3s ease-in-out
+
+	&:hover
+		background-color: #333
+
+	&-reply,
+	&-wrap 
+		margin-bottom: 30px
+		overflow: hidden
+
+	&-wrap.children
+		margin-left: 60px
+
+
+.count-comments
+	margin: 0 0 20px
+
+
+#submit
+	font-size: 14px
+	line-height: 26px
+	cursor: pointer
+	transition: all 0.3s ease-in-out
+
+	&:hover
+		background-color: #f95b39
+		border-color: #f95b39
+		color: #fff
+
+
+input[type="submit"]
+	transition: all 0.3s linear
+	background-color: transparent
+	padding: 13px 17px
+	border: 2px solid
+
+#respond
+	margin-bottom: 40px
+
+#commentform 
+
+	textarea
+		width: 100%
+				
+//
+// Sidebar
+//
+.sidebar
+	overflow: hidden
+	
+.widget
+	color: #838383
+	margin: 40px 0
+
+	h4
+		text-transform: uppercase
+		font-size: 20px
+		margin-bottom: 20px
+
+	a
+		color: #838383
+		transition: all 0.3s ease-in-out
+	
+		&:hover
+			color: #f95b39
+
+	ul
+		list-style: none
+
+	li 
+
+		a
+			text-decoration: none
+
+	h2
+		position: relative
+		overflow:hidden
+
+		&:after
+			content: ""
+			position: absolute
+			top: 48%
+			border-bottom: 1px solid
+			border-color: #838383
+			width: 100%
+			margin: 0 14px
+
+ 
+  
+ 

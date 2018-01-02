@@ -1,6 +1,7 @@
 var gulp = require('gulp'); 
 var del = require('del');   
 var sass = require('gulp-sass'); 
+
 var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
  
@@ -18,6 +19,11 @@ gulp.task("build", function(){
     .pipe(gulp.dest('./wp-content/themes/aura/assets/css/'));
 
 })
+
+gulp.task('styles:watch', function() {
+    gulp.watch('./wp-content/themes/aura/assets/sass/*.sass', ['build']);
+ 
+});
 
  
   

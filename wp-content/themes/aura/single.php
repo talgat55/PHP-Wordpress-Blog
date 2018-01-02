@@ -1,43 +1,79 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section id="content" class="full-screen main-wallpapers clearfix" style="background-color: #f9f9f9;">
+	<div class="title-box">
+				<div class="container clearfix">
+					<h1><?php _e( 'Posts', 'light' ); ?></h1>
+				</div>
+	</div>
+		<div class="container"><!--  container -->
+ 			<div class="col-lg-9 no-padding">
+				
+				<div class="large-posts clearfix">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			<?php  while ( have_posts() ) : the_post();  ?>
+ 
+					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post-item'); ?>>
+						<div class="post-thumb">
+							 <img src="<?php echo wp_get_attachment_image_url(  get_post_thumbnail_id(),'full'); ?>"  /> 
+						</div>
+					 		<div class="post-entry">
+													
+								<div class="post-header">
+													
+								 <h2><?php echo get_the_title(); ?></h2> 
+													
+								</div>
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
+								<div class="post-meta">
+									<span class="post-meta-data">
+										<?php echo get_the_date('d-M'); ?>
+									</span>
+											
+									<span class="sep-post-meta">/</span>
+									
+									<span class="post-meta-tag">
+										<?php 
+											foreach (get_the_tags() as $key => $value) {
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+												if($key==0){
+													echo $value->name;
+												}else{
 
-				the_post_navigation( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-				) );
+													echo ' ,'.$value->name;
+												}
+											}
+										?>
+									</span>
+														
+									<!--<span class="sep-post-meta">/</span>
+									
+									<span class="post-meta-likes">
+										 <i class="fa fa-heart"></i>
+										 <span>99</span>
+									</span>
+											-->			
+								</div>
+								<div class="post-content">
+									<p>
+										<?php echo get_the_content(); ?>
+									</p>
+								</div>
+														 
+							</div>
+					 
+					 	<?php  comments_template('', true); ?>
 
-			endwhile; // End of the loop.
-			?>
+						</article><!-- #post-## -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
-
+			<?php endwhile; ?>
+				</div>
+			</div>
+			<div class="col-lg-3 no-padding">
+				<?php get_sidebar(); ?>
+			</div> 
+		</div><!--  container end -->
+			
+</section><!--  content end -->
 <?php get_footer();
