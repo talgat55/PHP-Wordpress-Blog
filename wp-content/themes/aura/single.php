@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-
+<?php $options = get_theme_options(); ?>
 <section id="content" class="full-screen main-wallpapers clearfix" style="background-color: #f9f9f9;">
 	<div class="title-box">
 				<div class="container clearfix">
@@ -63,7 +63,13 @@
 														 
 							</div>
 					 
-					 	<?php  comments_template('', true); ?>
+					 	<?php  
+					 	if($options['enable-comments']){
+					 		
+					 		comments_template('', true); 
+
+					 	}
+					 	?>
 
 						</article><!-- #post-## -->
 

@@ -222,41 +222,16 @@
       //  'desc'             => ' ',
         'fields'           => array(
            array(
-                'id' => 'coordinate-map', 
-                'type' => 'text', 
-                'title' => __('Координаты для первой  карты ',  'redux-framework-demo'), 
-                'default' => '40.6700, -73.9400'
+                'id'       => 'enable-comments',
+                'type'     => 'switch', 
+                'title'    => __('Comments in Single Post', 'redux-framework-demo'), 
+                'default'  => true,
             ),  
-            array(
-                'id' => 'address-one', 
-                'type' => 'textarea', 
-                'title' => __('Адресс первой  карты ',  'redux-framework-demo'), 
-                'default' => '<p>Кафе Сандро<br>
-                        г. Рязань, ул. Праволыбедская, 40. БЦ Капитал<br>
-                        Телефон: +7 (4912) 777 570<br><br>
-                        Время работы:<br>
-                        Каждый день с 11:00 до 01:00.</p>'
-            ),  
-            array(
-                'id' => 'address-two', 
-                'type' => 'textarea', 
-                'title' => __('Адресс второй  карты ',  'redux-framework-demo'), 
-                'default' => '<p>Кафе Сандро<br>
-                        г. Рязань, ул. Праволыбедская, 40. БЦ Капитал<br>
-                        Телефон: +7 (4912) 777 570<br><br>
-                        Время работы:<br>
-                        Каждый день с 11:00 до 01:00.</p>'
-            ),  
-
-           array(
-                'id' => 'coordinate-map-two', 
-                'type' => 'text', 
-                'title' => __('Координаты для второй  карты ',  'redux-framework-demo'), 
-                'default' => '40.6700, -72.9400'
-            ),
+            
         )
     ) );
-    
+
+    /*
      Redux::setSection( $opt_name, array(
         'title'            => __( ' Страница Контактов', 'redux-framework-demo' ),
         'id'               => 'general-settings-styling',
@@ -278,7 +253,7 @@
             
         )
     ) );
-
+*/
 
     
 
