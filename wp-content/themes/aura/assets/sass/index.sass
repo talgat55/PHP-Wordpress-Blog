@@ -1,0 +1,177 @@
+.clearfix
+	display: table
+	content: ""
+	
+	&:before
+		@extend .clearfix
+
+	&:after
+		@extend .clearfix
+		clear: both
+
+.container 
+	margin-right: auto
+	margin-left: auto
+
+	@media (max-width: 767px)
+		
+		&
+			padding-right: 15px
+			padding-left: 15px
+	
+	@media (min-width: 768px)
+
+		&
+			width: 750px
+
+	@media (min-width: 992px)
+
+		&
+			width: 970px
+
+	@media (min-width: 1200px)
+		& 
+			width: 1170px
+
+body
+	font-family: Dosis
+	font-size: 14px
+	line-height: 26px
+	color: #333
+	background-color: #fff
+	overflow-x: hidden
+
+//
+// Logo
+//
+#logo
+	float: left
+	padding: 10px 0
+ 	
+	img
+		height: 80px
+	    transition: all 0.3s ease-in-out
+	   
+ 
+	.header-type-left &  
+		position: relative
+		left: 50% 
+    	transform: translateX(-50%)
+ 
+		img
+			float: none
+  
+.no-hide-logo
+	display: block!important
+
+.preloader-button
+	color: #828282 
+	transition: all 0.3s ease-in-out
+	font-size: 20px
+	margin: 20px
+	position: absolute
+	top: 0
+	right: 0
+
+	:hover
+		color: #f95b39
+
+#preloader-page 
+	background-color:#fff
+	position: fixed
+	width: 100%
+    height: 100%
+	display: none
+	top: 0
+	left: 0
+	z-index: 999999999999
+
+	a
+		text-decoration: none
+
+	&-spinner
+		width: 40px
+		height: 40px
+		top: 50%
+    	left: 50%
+    	position: relative
+		background-color: #333
+		transform: translateX(-50%) translateY(-50%)
+		border-radius: 100%
+		animation: scaleout 1.0s infinite ease-in-out
+
+@keyframes scaleout 
+  0% 
+    transform: scale(0.0)
+
+  100% 
+    transform: scale(1.0)
+    opacity: 0
+
+//  
+// header
+//
+.main-body-class
+ 	background-color: #f9f9f9
+
+#header-wrap
+	left: 0
+	right: 0
+
+	@media (min-width: 1020px) 
+	
+		.header-type-one &
+			position: fixed
+			right: 0
+			left: 0
+			z-index: 999
+			background-color: #fff
+		
+	@media (max-width: 1019px)
+
+		&
+			width: 100%
+
+		.header-type-one &
+			position: relative
+			z-index: 9
+			background-color: #fff
+
+.full-header
+	width: 100%
+
+.header-type-one
+	height: 100px
+
+.header-wrap-overlay
+	height: 100px
+	transition: all 0.3s ease-in-out
+
+.menu
+	touch-action: pan-y
+	list-style: none
+	padding: 0
+	margin: 0
+	visibility: visible
+
+	@media (min-width: 1020px)
+
+		&
+			float: right
+
+		li
+			position: relative	
+			font-size: 15px
+			transition: all 0.3s ease-in-out
+			float: left
+			text-transform: uppercase
+
+		a
+			color: #333
+			line-height: 100px 
+			transition: all 0.3s ease-in-out
+			text-decoration: none
+			background-color: transparent
+			text-transform: uppercase
+			padding: 0 10px
+			font-weight: 600
