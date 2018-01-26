@@ -11,7 +11,6 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
-
 /*
 * Admin 
 */ 
@@ -21,8 +20,7 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/r
 }
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/redux/options-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/redux/options-config.php' );
-}
-
+} 
 /*
  * Enable support for Post Formats.
  *
@@ -111,3 +109,4 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	
 	register_nav_menus($menu_arr);
 }	
+ 
